@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom"
 import date from "../../../assets/icons/date.png"
+import { useState } from "react"
+import { TfiMenu } from "react-icons/tfi"
 
 const NavBar = () => {
+    const [ isMenu, setIsMenu ] = useState(false)
     const navLinks = [
         {
             name : 'Home', path : '/'
@@ -46,17 +49,33 @@ const NavBar = () => {
             </div>
 
             {/* mobile menu */}
-            <div className="w-[120px] h-full fixed top-4 right-2 flex-col justify-start items-center gap-6 flex md:hidden">
-                {
-                    navLinks.map((navlink, idx) => {
-                        return (
-                            <NavLink to={navlink?.path} key={idx}>
-                                <h4 className="text-xl transition-[0.4s] hover:transition-[0.4s] hover:text-orange-500 ">{navlink?.name}</h4>
-                            </NavLink>
-                        )
-                    })
-                }
-            </div>
+             <TfiMenu
+          className="text-[#F35525] text-2xl block md:hidden cursor-pointer"
+          onClick={() => setIsMenu((prev) => !prev)}
+        />
+
+        {/* Mobile menu dropdown */}
+       <div className={`absolute w-36 pl-2 top-[100px] right-4 z-50
+                      bg-black/50 rounded-xl flex flex-col items-start 
+                        justify-evenly gap-4 md:hidden transition-all duration-300
+                      ${isMenu ? "opacity-100 visible" : "opacity-0 invisible"} `}
+>
+          {navLinks.map((navlink, idx) => (
+            <NavLink
+              to={navlink.path}
+              key={idx}
+              onClick={() => setIsMenu(false)}
+              className={({ isActive }) =>
+                `h-8 w-full text-start p-2 text-lg  transition duration-300 hover:text-orange-500 ${
+                  isActive ? "text-orange-500 font-semibold" : "text-white"
+                }`
+              }
+            >
+              {navlink.name}
+            </NavLink>
+          ))}
+        </div>
+
 
         </div>
       
