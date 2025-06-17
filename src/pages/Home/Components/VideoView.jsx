@@ -21,7 +21,7 @@ const VideoView = () => {
           <img
             src={playV}
             alt="play video"
-            className="w-[90%] h-[90%] absolute top-[50%] cursor-pointer hover:scale-110 transition"
+            className="w-[80%] h-[90%] absolute top-[50%] cursor-pointer hover:scale-110 transition"
             onClick={handlePlay}
           />
         ) : (

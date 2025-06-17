@@ -1,0 +1,7 @@
+export { default as SocialMedias } from './SocialMedias'
+export { default as Navbar } from './NavBar'
+export { default as Statistics } from './Statistics'
+export { default as SunnyMap } from './SunnyMap'
+export { default as Card } from './Card'
+export { default as Footer } from './Footer'
+export { default as BackToHome } from './BackToHome'

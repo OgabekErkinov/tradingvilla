@@ -2,9 +2,11 @@ import { useState } from "react";
 import apartment from '../../../assets/images/apartment.jfif'
 import penthouse from '../../../assets/images/penthouse.webp'
 import villa from '../../../assets/images/villa.webp'
+import date from "../../../assets/icons/date.png"
 
 const BestDeal = () => {
   const [choosen, setChoosen] = useState('Apartment');
+
 
   const choices = [
     {
@@ -72,8 +74,8 @@ const BestDeal = () => {
         </div>
 
         {/* Selected property details */}
-        <div className="w-full h-auto md:h-[400px] flex flex-col md:flex-row items-center md:justify-around gap-10">
-          <div className="h-auto w-[300px] flex flex-col justify-evenly gap-4">
+        <div className="w-full h-auto md:h-[420px] flex flex-col md:flex-row items-center md:justify-around gap-10">
+          <div className="h-full w-[300px] flex flex-col justify-evenly gap-4">
             {properties.map((prop, idx) => {
               const value = [
                 `${selected.space} m²`,
@@ -102,9 +104,16 @@ const BestDeal = () => {
           </div>
 
           {/* info */}
-          <div className="w-full md:w-[30%] h-full">
-            <p className="h-auto w-full text-xl ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat inventore rem suscipit eos ipsam explicabo, sed debitis voluptates assumenda numquam rerum ipsa? Harum nesciunt fugiat atque tempora minus molestiae recusandae!</p>
+          <div className="w-full md:w-[30%] h-full flex flex-col items-center gap-1">
+            <p className="h-auto w-full text-xl ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat inventore rem suscipit eos ipsam explicabo, sed debitis voluptates assumenda numquam rerum ipsa?</p>
             <p className="h-auto w-full text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat inventore rem suscipit eos ipsam explicabo, sed debitis voluptates assumenda numquam rerum ipsa? Harum nesciunt fugiat atque tempora minus molestiae recusandae!</p>
+            <div className="bg-black h-[40px] w-[150px] rounded-[16px] flex justify-between items-center">
+                 <div className="h-full w-[40px] mt-2 flex justify-center items-center bg-[#F35525] rounded-[16px]">
+                    <img src= { date } alt="date icon" />
+                </div>
+                <p className="w-[100px] text-xs text-white"> Schedule a visit</p>
+            
+            </div>
           </div>
         </div>
 

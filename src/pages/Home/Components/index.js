@@ -1,0 +1,5 @@
+export { default as Slider } from './Slider'
+export { default as Details } from './Details'
+export { default as VideoView } from './VideoView'
+export { default as BestDeal } from './BestDeal'
+export { default as Properties } from './Properties'
